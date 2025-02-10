@@ -19,8 +19,8 @@ package com.jjoe64.graphview;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.widget.EdgeEffectCompat;
+import androidx.core.view.ViewCompat;
+import androidx.core.widget.EdgeEffectCompat;
 import android.util.Log;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
@@ -50,14 +50,14 @@ public class Viewport {
     /**
      * this reference value is used to generate the
      * vertical labels. It is used when the y axis bounds
-     * is set manual and humanRounding=false. it will be the minValueY value.
+     * is set manual and humanRoundingY=false. it will be the minValueY value.
      */
     protected double referenceY = Double.NaN;
 
     /**
      * this reference value is used to generate the
      * horizontal labels. It is used when the x axis bounds
-     * is set manual and humanRounding=false. it will be the minValueX value.
+     * is set manual and humanRoundingX=false. it will be the minValueX value.
      */
     protected double referenceX = Double.NaN;
 
@@ -83,7 +83,7 @@ public class Viewport {
     protected double getReferenceX() {
         // if the bounds is manual then we take the
         // original manual min y value as reference
-        if (isXAxisBoundsManual() && !mGraphView.getGridLabelRenderer().isHumanRounding()) {
+        if (isXAxisBoundsManual() && !mGraphView.getGridLabelRenderer().isHumanRoundingX()) {
             if (Double.isNaN(referenceX)) {
                 referenceX = getMinX(false);
             }
@@ -1263,7 +1263,7 @@ public class Viewport {
     protected double getReferenceY() {
         // if the bounds is manual then we take the
         // original manual min y value as reference
-        if (isYAxisBoundsManual() && !mGraphView.getGridLabelRenderer().isHumanRounding()) {
+        if (isYAxisBoundsManual() && !mGraphView.getGridLabelRenderer().isHumanRoundingY()) {
             if (Double.isNaN(referenceY)) {
                 referenceY = getMinY(false);
             }

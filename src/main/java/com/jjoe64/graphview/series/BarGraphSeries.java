@@ -19,7 +19,7 @@ package com.jjoe64.graphview.series;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.support.v4.view.ViewCompat;
+import androidx.core.view.ViewCompat;
 import android.util.Log;
 import android.view.animation.AccelerateInterpolator;
 
@@ -279,8 +279,11 @@ public class BarGraphSeries<E extends DataPointInterface> extends BaseSeries<E> 
             }
 
             double left = x + contentLeft - offset + spacing/2 + currentSeriesOrder*barWidth;
-            double top = (contentTop - y) + contentHeight;
             double right = left + barWidth;
+            if (left > contentLeft + contentWidth || right < contentLeft) {
+                continue;
+            }
+            double top = (contentTop - y) + contentHeight;
             double bottom = (contentTop - y0) + contentHeight - (graphView.getGridLabelRenderer().isHighlightZeroLines()?4:1);
 
             boolean reverse = top > bottom;

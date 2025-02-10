@@ -1,5 +1,7 @@
 # Chart and Graph Library for Android
 
+## Project maintainer wanted! For time reasons I can not continue to maintain GraphView. Contact me if you are interested and serious about this project. g.jjoe64@gmail.com
+
 ## What is GraphView
 
 GraphView is a library for Android to programmatically create
@@ -45,11 +47,11 @@ Supported graph types:
 
 1) Add gradle dependency:
 ```
-compile 'com.jjoe64:graphview:4.2.1'
+implementation 'com.jjoe64:graphview:4.2.2'
 ```
 
 2) Add view to layout:
-```
+```xml
 <com.jjoe64.graphview.GraphView
         android:layout_width="match_parent"
         android:layout_height="200dip"
@@ -57,7 +59,7 @@ compile 'com.jjoe64:graphview:4.2.1'
 ```
 
 3) Add some data:
-```
+```java
 GraphView graph = (GraphView) findViewById(R.id.graph);
 LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {
           new DataPoint(0, 1),
@@ -76,9 +78,9 @@ graph.addSeries(series);
 
 ## More examples and documentation
 
-<a href="http://android-graphview.org">Get started at project homepage</a>
+<a href="https://github.com/jjoe64/GraphView/wiki">Get started at project wiki homepage</a>
 
 To show you how to integrate the library into an existing project see the GraphView-Demos project!
 See GraphView-Demos for examples.
 <a href="https://github.com/jjoe64/GraphView-Demos">https://github.com/jjoe64/GraphView-Demos<br/>
-<a href="http://android-graphview.org">View GraphView page http://android-graphview.org</a>
+<a href="https://github.com/jjoe64/GraphView/wiki">View GraphView wiki page https://github.com/jjoe64/GraphView/wiki</a>

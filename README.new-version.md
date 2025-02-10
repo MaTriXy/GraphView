@@ -23,6 +23,8 @@ and/or here as ascii
 
 => needs some time
 
+hardcode gpg key password in maven_push.gradle
+
 hardcode user/pwd of nexus account in maven_push.gradle
 
 success gradle task uploadArchives
@@ -45,8 +47,13 @@ Release entry
 
 Wait some days
 
-How to create a new .jar file
---------------------------------
-success this gradle task
-- ./gradlew --rerun-tasks clearJar makeJar
-- cp build/outputs/myCompiledLibrary.jar public/GraphView-4.2.0.jar
+## update java doc
+
+$ javadoc -d javadoc -sourcepath src/main/java/ -subpackages com.jjoe64
+$ mv javadoc/ ..
+$ git checkout gh-pages 
+$ rm -rf javadoc
+$ mv ../javadoc/ .
+$ git add javadoc
+$ git commit -a
+
